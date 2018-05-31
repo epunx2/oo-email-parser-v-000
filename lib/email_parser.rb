@@ -10,6 +10,10 @@ class EmailParser
     @@emails = emails
   end
 
+  def self.all
+    @@all
+  end
+
   def parse
     rows = @@emails.split(/\s|,/)
     emails = []
