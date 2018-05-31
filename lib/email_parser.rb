@@ -16,7 +16,7 @@ class EmailParser
     self.class.all << self
   end
 
-  def self.parse
+  def parse
     rows = self.all.split(/\s|,/)
     emails = []
     rows.each do |row|
