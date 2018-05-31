@@ -12,9 +12,10 @@ class EmailParser
 
   def parse
     rows = @@emails.split(/\s|,/)
-    emails = rows.collect do |row|
+    emails = []
+    rows.collect do |row|
       if rows.include?(row) == false
-        row.strip
+        emails << row
       end
     end
     emails
