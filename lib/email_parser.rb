@@ -6,16 +6,17 @@
 class EmailParser
   attr_accessor :email
   @@emails = []
-  def initialize(emails)
-    @@emails = emails
+  def initialize(email)
+    @email = email
+    self.class.all << self
   end
 
   def self.all
-    @@all
+    @@emails
   end
 
   def parse
-    rows = self.class.all.split(/\s|,/)
+    rows = self.all.split(/\s|,/)
     emails = []
     rows.each do |row|
       if rows.include?(row) == false
