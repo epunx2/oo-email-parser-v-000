@@ -17,7 +17,7 @@ class EmailParser
   end
 
   def parse
-    rows = @@emails.split(/\s|,/)
+    rows = self.all.to_s.split(/\s|,/)
     emails = []
     rows.each do |row|
       if rows.include?(row) == false
